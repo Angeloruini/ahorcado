@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Hangman game</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="enfocar()">
+
+        <main>
+            <header>
+                <h1 class="logo"><img src="imagen/Logo.png" alt="Logo de Alura"></h1>
+                <input onblur="enfocar()" autofocus  autocapitalize="characters" type="text" class="teclado" onkeyup="soloLetras();">
+            </header>
+            <section class="inicio">
+
+                <div>
+                    <h2 class="titulo">HANGMAN GAME</h2>
+                    <button class="btnInicio" type="submit" onclick="iniciarJuego();">Start</button>
+                    <button class="agregarP" type="submit" onclick="nuevaPalabra();">Add word</button>
+                    <img  class="pie" src="imagen/gatit.png" alt="Logo gatito">
+                </div>
+
+            </section>
+
+            <section class="juego">
+            
+                <div>
+                    <canvas width="600" height="600" class="ahorcado"></canvas>
+                </div>
+                
+                <div>
+                
+                    <input class="almacen" disabled="text">
+                    <button class="nuevo-juego" onclick="nuevoJuego()">New Game</button>
+                    <button class="rendirse" onclick="desistir()" >Desist</button>
+                
+                </div>
+            </section>
+            <section class="nueva-palabra">
+                <div>
+                    <input class="ingreseTexto" autocapitalize="characters"  placeholder="Enter your Word">
+                </div>
+
+                <div>
+                    <p class="advertencia">&#10071; Min. 4 words y Max. 8 words</p>
+                    <button class="btn-agregar" onclick="agregarPalabra();">Save and play</button>
+                    <button class="btn-cancelar" onclick="cancelar();">Cancel</button>
+                    
+                 
+                </div> 
+
+            </section>
+      
+        </main>
+       
+		<script src="juego.js"></script>
+        <script src="canvas.js"></script>
+        
+    </body>
+
+</html>
